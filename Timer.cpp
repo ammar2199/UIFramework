@@ -25,8 +25,6 @@ void Timer::Stop() {
 
 double Timer::TimeTillNextInterval(
        std::chrono::time_point<std::chrono::high_resolution_clock> current) const {
-  // XXX: I was suggested to do this via ChatGPT :).
- 
   // Time-elapsed since start of interval.
   // eg: 0.30(current time) % 0.25 (interval) -> 0.05 seconds have elapsed.
   //

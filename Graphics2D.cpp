@@ -36,6 +36,8 @@ static const std::vector<const char *> enabledInstanceExtensions = {
     "VK_KHR_surface", "VK_KHR_xlib_surface"};
 const std::vector<const char *> enabledDeviceExtensions = {"VK_KHR_swapchain"};
 
+// TODO: Switch to using Vertex Buffers!
+
 
 // Used to Populate Push Constant
 // Packed to match std430 layout

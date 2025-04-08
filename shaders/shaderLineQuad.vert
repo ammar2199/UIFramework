@@ -1,5 +1,7 @@
 #version 450 core
 
+// TODO: Use Vertex Buffers.
+
 // Input
 
 // Output

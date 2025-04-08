@@ -24,6 +24,7 @@
 // TODO: Better Resource Management.
 //       Loading and Unloading of Textures at the necessary moments, etc.
 //        
+// TODO: Switch to using Vertex Buffers!
 struct __attribute__((packed)) vec2 {
   float x;
   float y;

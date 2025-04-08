@@ -247,9 +247,7 @@ int main(int argc, char **argv) {
                                      filename, 17,
                                      TextView::TextAlignment::Left);
     // XXX: We have to capture both pointers by reference
-    //      else they'll be null. But capturing the
-    //      std::string by reference is weird. Ideally,
-    //      we'd capture the string by value.
+    //      else they'll be null.
     textBox->RegisterClickEvent([filename, &editTextView, &filenameView](View* selfView) {
         std::cout << filename << " Click Event called" << std::endl; 
         std::ifstream instream(filename);
@@ -287,8 +285,6 @@ int main(int argc, char **argv) {
   int currentFontSize = 16;
   EditTextView* editText = new EditTextView(windowRoot, 
                                             "fonts/Roboto-Regular.ttf", currentFontSize);
-
-  std::cout << "EditText:" << std::hex << (View*)editText<< std::dec << std::endl;
 
   editTextView = editText;
 
@@ -331,7 +327,6 @@ int main(int argc, char **argv) {
 
   plusView->RegisterClickEvent([&](View* view) {
       currentFontSize = std::min<int>(50, currentFontSize+1); 
-      std::cout << "Plus View click event new font: " << currentFontSize << std::endl;
       editTextView->SetTextSize(currentFontSize);
   });
   
@@ -348,7 +343,6 @@ int main(int argc, char **argv) {
   Constraint* minusWidth = new Constraint(minusView, BoxAttribute::Width, Relation::EqualTo,
                                      nullptr, BoxAttribute::NoAttribute, 0.f, 100.f);
   minusView->RegisterClickEvent([&](View* view) {
-      std::cout << "Minus View click event " << std::endl;
       currentFontSize = std::max<int>(6, currentFontSize-1); 
       editTextView->SetTextSize(currentFontSize);
   });
