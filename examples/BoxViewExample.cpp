@@ -54,15 +54,23 @@ int main(int argc, char **argv) {
  
   Constraint* leftConstraint2 = new Constraint(boxView2, BoxAttribute::Left, 
                                     Relation::EqualTo, windowRoot,
-                                    BoxAttribute::Left, 1.f, 0.f);
+                                    BoxAttribute::Left, 1.f, 50.f);
+
+  constexpr int Priority = 2;
   Constraint* rightConstraint2 = new Constraint(boxView2, BoxAttribute::Right, 
                                     Relation::EqualTo, windowRoot,
-                                    BoxAttribute::Right, 1.f, 0.f);
+                                    BoxAttribute::Right, 1.f, -100.f, Priority);
+
+  Constraint* widthConstraint2 = new Constraint(boxView2, BoxAttribute::Width, 
+                                    Relation::LessThanOrEqualTo, nullptr,
+                                    BoxAttribute::NoAttribute, 1.f, 800, Priority + 1);
+ 
   windowRoot->AddView(boxView2);
   windowRoot->AddConstraint(topConstraint2);
   windowRoot->AddConstraint(bottomConstraint2);
   windowRoot->AddConstraint(leftConstraint2);
   windowRoot->AddConstraint(rightConstraint2);
+  windowRoot->AddConstraint(widthConstraint2);
 
   while (!glfwWindowShouldClose(GlfwResources.window)) {
     std::array<InputEvent, 5> mInputEvents; // One for Mouse, Scroll, Text, and Key Input
