@@ -32,4 +32,7 @@ Sample applications are within [examples](examples/) directory.
 ---
 **BoxView**\
 ![BoxView Example](examples/BoxViewExample.gif)
+---
+**Sample Application**\
+![app.cpp](examples/TextEditor.gif)
 --
