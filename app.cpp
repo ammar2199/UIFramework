@@ -288,9 +288,9 @@ int main(int argc, char **argv) {
 
   editTextView = editText;
 
-  editText->SetRGB(0.05, 0.05, 0.05);
-  editText->SetTextRGB(1.f, 1.f, 1.f);
-  editText->SetCursorRGB(1.f, 1.f, 1.f);
+  editText->SetRGB(0.9f, 0.9f, 0.9f);
+  editText->SetTextRGB(0.f, 0.f, 0.f);
+  editText->SetCursorRGB(1.f, 0.f, 0.f);
 
   Constraint* rightEdit = new Constraint(editText, BoxAttribute::Right, Relation::EqualTo,
                                      windowRoot, BoxAttribute::Right, 1.f, 0.f);
